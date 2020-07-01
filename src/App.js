@@ -1,20 +1,22 @@
-import React, {useState} from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 import Navigation from "./components/Navigation/Navigation";
-import ShoeWrapper from './components/ShoeWrapper/ShoeWrapper';
-import ShoeData from "./components/ShoeWrapper/ShoeData";
+import SearchForm from "./components/SearchForm/SearchForm";
+import ShoeList from "./components/ShoeList";
+import Cart from "./components/Cart";
+import { CartState } from "./components/CartContext";
 
 const App = () => {
-  const [shoeData, setShoeData] = useState(ShoeData);
   return (
     <div className="App">
-      <Navigation />
-      <ShoeWrapper shoeData={shoeData}/>
-      {
-        console.log(shoeData)
-      }
+      <CartState>
+        <Navigation />
+        <Cart />
+        <SearchForm />
+        <ShoeList />
+      </CartState>
     </div>
   );
-}
+};
 
 export default App;

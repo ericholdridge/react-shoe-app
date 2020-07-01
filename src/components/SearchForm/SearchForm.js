@@ -1,13 +1,16 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core';
+import { css, jsx } from "@emotion/core";
+import Container from "../GlobalComponents/Container";
 
 const SearchForm = () => {
-  return(
-    <form action="" css={styles}>
-      <input type="text" placeholder="Search Shoes"/>
-    </form>
-  )
-}
+  return (
+    <Container>
+      <form action="" css={styles}>
+        <input type="text" placeholder="Search Shoes" />
+      </form>
+    </Container>
+  );
+};
 
 const styles = css`
   width: 100%;
@@ -21,5 +24,5 @@ const styles = css`
     padding: 0 6px;
     outline: none;
   }
-`
+`;
 export default SearchForm;
