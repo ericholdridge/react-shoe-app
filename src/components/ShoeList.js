@@ -3,36 +3,51 @@ import { css, jsx } from "@emotion/core";
 import Shoe from "./Shoe";
 import Container from "../components/GlobalComponents/Container";
 
-import NikeCleat from "../Images/nikeCleat.jpg";
-import NikeMercurialCleat from "../Images/nikeMercurialCleat.jpg";
-import flyknitRacer from "../Images/flyknitRacer.jpg";
-import NikeStrap from "../Images/nikeStrap.jpg";
+// Images
+import Shoe1 from "../Images/shoe1.png";
+import Shoe2 from "../Images/shoe2.png";
+import Shoe3 from "../Images/shoe3.png";
+import Shoe4 from "../Images/shoe4.png";
+import Shoe5 from "../Images/shoe5.png";
+import Shoe6 from "../Images/shoe6.png";
 
 const ShoeList = () => {
   const database = [
     {
-      image: NikeCleat,
+      image: Shoe1,
       title: "Nike Cleat 1",
       size: [8, 9, 10, 11, 12],
-      price: "199.99",
+      price: 199.99,
     },
     {
-      image: NikeMercurialCleat,
+      image: Shoe2,
       title: "Nike Cleat 2",
-      Size: [8, 9, 10, 11, 12],
-      price: "199.99",
+      size: [8, 9, 10, 11, 12],
+      price: 199.99,
     },
     {
-      image: flyknitRacer,
+      image: Shoe3,
       title: "Nike Flyknit Racer",
       size: [8, 9, 10, 11, 12],
-      price: "120.99",
+      price: 120.99,
     },
     {
-      image: NikeStrap,
+      image: Shoe4,
       title: "Nike Flyknit Racer",
       size: [8, 9, 10, 11, 12],
-      price: "120.99",
+      price: 120.99,
+    },
+    {
+      image: Shoe5,
+      title: "Nike Flyknit Racer",
+      size: [8, 9, 10, 11, 12],
+      price: 120.99,
+    },
+    {
+      image: Shoe6,
+      title: "Nike Flyknit Racer",
+      size: [8, 9, 10, 11, 12],
+      price: 120.99,
     },
   ];
 
@@ -40,7 +55,7 @@ const ShoeList = () => {
     <div css={styles}>
       <Container>
         {database.map((shoe) => (
-          <Shoe image={shoe.image} title={shoe.title} price={shoe.price} />
+          <Shoe image={shoe.image} title={shoe.title} price={shoe.price} size={shoe.size} />
         ))}
       </Container>
     </div>
@@ -49,6 +64,9 @@ const ShoeList = () => {
 
 const styles = css`
   width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
   .container {
     display: flex;
     justify-content: space-between;

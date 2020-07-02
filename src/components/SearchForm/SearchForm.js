@@ -4,11 +4,9 @@ import Container from "../GlobalComponents/Container";
 
 const SearchForm = () => {
   return (
-    <Container>
-      <form action="" css={styles}>
-        <input type="text" placeholder="Search Shoes" />
-      </form>
-    </Container>
+    <form action="" css={styles}>
+      <input type="text" placeholder="Search Shoes" />
+    </form>
   );
 };
 

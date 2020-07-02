@@ -1,25 +1,31 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
-import Container from "./GlobalComponents/Container";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
+  const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
+
   return (
-    <Container>
-      <div css={styles}>
-        <span>Cart: {cart.length}</span>
-        <span>Price:</span>
-      </div>
-    </Container>
+    <div css={styles} className="cart">
+      <span>
+        <i className="fas fa-shopping-cart"></i>
+        {cart.length}
+      </span>
+      <span>Price: ${totalPrice.toFixed(2)}</span>
+    </div>
   );
 };
 
 const styles = css`
-  width: 100%;
+  padding: 10px 0px 10px 10px;
   display: flex;
-  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  > span {
+    margin: 0 10px 0 0;
+  }
 `;
 
 export default Cart;

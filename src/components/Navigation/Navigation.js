@@ -1,13 +1,16 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
 import Container from "../GlobalComponents/Container";
+import SearchForm from "../SearchForm/SearchForm";
+import Cart from "../Cart";
 
 const Navigation = () => {
   return(
     <nav css={styles}>
       <Container>
-        <div className="logo">shoeGOD</div>
-        <div className="cart"><i className="fas fa-shopping-cart fa-lg"></i></div>
+        <div className="logo">$hoeApp</div>
+        <SearchForm />
+        <Cart />
       </Container>
     </nav>
   )
@@ -15,7 +18,7 @@ const Navigation = () => {
 
 const styles = css`
   width: 100%;
-  padding: 30px 0;
+  padding: 20px 0;
   background: #000;
   .container {
     display: flex;
