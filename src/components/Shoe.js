@@ -6,17 +6,15 @@ import { CartContext } from "./CartContext";
 const Shoe = ({ image, title, price, size }) => {
   const [cart, setCart] = useContext(CartContext);
   const [userShoeSize, setUserShoeSize] = useState();
-  const [shoe, setShoe] = useState({ image: image, title: title, price: price, size: userShoeSize })
-
-   // Add function to push shoeSize to the new shoe object
-   const handleAddSize = (shoeSize) => {
-     setUserShoeSize(shoeSize)
-    // setShoe((...prevState) => [{...prevState, size: userShoeSize}])
-  };
+  const [shoe, setShoe] = useState({
+    image: image,
+    title: title,
+    price: price,
+  });
 
   const addToCart = () => {
-    console.log(cart);
-    setCart((currentState) => [...currentState, shoe])
+    shoe.size = userShoeSize
+    setCart((currentState) => [...currentState, shoe]);
   };
 
   return (
@@ -28,9 +26,9 @@ const Shoe = ({ image, title, price, size }) => {
         <h2>{title}</h2>
         <div className="shoeSize">
           {size.map((shoeSize, index) => (
-            <p onClick={() => handleAddSize(shoeSize)} key={index}>
+            <p onClick={() => setUserShoeSize(shoeSize)} key={index}>
               {shoeSize}
-            </p> 
+            </p>
           ))}
         </div>
         <span>${price}</span>
@@ -65,6 +63,7 @@ const styles = css`
     background: black;
     padding: 8px 14px;
     border: 1px solid black;
+    outline: none;
     color: #fff;
     font-weight: 600;
     cursor: pointer;
@@ -88,6 +87,10 @@ const styles = css`
         margin: 0 6px;
         transition: background 600ms, color 600ms;
         &:hover {
+          background: #000;
+          color: #fff;
+        }
+        &:active {
           background: #000;
           color: #fff;
         }
