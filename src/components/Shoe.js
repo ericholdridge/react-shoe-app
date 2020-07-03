@@ -44,7 +44,6 @@ const styles = css`
   -webkit-box-shadow: -3px 7px 28px -14px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -3px 7px 28px -14px rgba(0, 0, 0, 0.75);
   box-shadow: -3px 7px 28px -14px rgba(0, 0, 0, 0.75);
-  margin: 0 0 40px 0;
   border-radius: 4px;
   padding: 0 0 40px 0;
   .img {
