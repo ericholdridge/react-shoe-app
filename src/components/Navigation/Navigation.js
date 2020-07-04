@@ -20,9 +20,6 @@ const styles = css`
   width: 100%;
   padding: 20px 0;
   background: #000;
-  position: absolute;
-  top: 0;
-  left: 0;
   .container {
     display: flex;
     justify-content: space-between;

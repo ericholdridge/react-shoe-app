@@ -2,7 +2,6 @@
 import { css, jsx } from "@emotion/core";
 import Shoe from "./Shoe";
 import Container from "../components/GlobalComponents/Container";
-import Navigation from "./Navigation/Navigation";
 
 // Images
 import Shoe1 from "../Images/shoe1.png";
@@ -54,7 +53,6 @@ const ShoeList = () => {
 
   return (
     <div css={styles}>
-      <Navigation />
       <Container>
         {database.map((shoe, index) => (
           <Shoe key={index} image={shoe.image} title={shoe.title} price={shoe.price} size={shoe.size} />
@@ -66,10 +64,9 @@ const ShoeList = () => {
 
 const styles = css`
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 82px);
   display: flex;
   align-items: center;
-  flex-direction: column;
   position: relative;
   .container {
     display: flex;

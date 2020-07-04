@@ -11,6 +11,7 @@ const App = () => {
   return (
     <div className="App" css={styles}>
       <CartState>
+        <Navigation />
         <ShoeList />
         <CartItems />
       </CartState>

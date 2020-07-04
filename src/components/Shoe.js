@@ -4,7 +4,7 @@ import React, { useContext, useState } from "react";
 import { CartContext } from "./CartContext";
 
 const Shoe = ({ image, title, price, size }) => {
-  const [cart, setCart] = useContext(CartContext);
+  const {cart, setCart} = useContext(CartContext);
   const [userShoeSize, setUserShoeSize] = useState();
   const [shoe, setShoe] = useState({
     image: image,
@@ -45,7 +45,8 @@ const styles = css`
   -moz-box-shadow: -3px 7px 28px -14px rgba(0, 0, 0, 0.75);
   box-shadow: -3px 7px 28px -14px rgba(0, 0, 0, 0.75);
   border-radius: 4px;
-  padding: 0 0 40px 0;
+  margin: 0 0 40px 0;
+  padding: 0 0 30px 0;
   .img {
     height: 290px;
     width: 290px;

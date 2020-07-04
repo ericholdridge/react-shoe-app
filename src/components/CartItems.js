@@ -6,38 +6,61 @@ import Container from "../components/GlobalComponents/Container";
 import CartItem from "./CartItem";
 import Cart from "./Cart";
 
-
 const CartItems = () => {
-  const [cart, setCart] = useContext(CartContext);
-  const [showCart, setShowCart] = useState(false)
+  const { cart, setCart, showCart, setShowCart } = useContext(CartContext);
+
   return (
-    <div className={showCart ?  'showCart' :  'hideCart'}css={styles}>
+    <div className={showCart ? "showCart" : ""} css={styles}>
       <Container>
-      <i class="fas fa-bars fa-lg" onClick={() => setShowCart(!false)}></i>
+        <div className="navIcon">
+          <i className="fas fa-bars fa-lg"></i>
+        </div>
         {/* Display the items in the cart */}
         <Cart />
-        {cart.map((item) => (
-          <CartItem img={item.image} title={item.title} size={item.size} price={item.price}/>
-        ))}
+        <div className="cartWrapper">
+          {cart.map((item) => (
+            <CartItem
+              img={item.image}
+              title={item.title}
+              size={item.size}
+              price={item.price}
+            />
+          ))}
+        </div>
       </Container>
     </div>
   );
 };
 
 const styles = css`
-    width: 20%;
-    position: absolute;
-    background: #ccc;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    overflow: scroll;
+  width: 100%;
+  max-width: 450px;
+  position: absolute;
+  background: #ccc;
+  top: 0;
+  left: -600px;
+  background: #000;
+  opacity: 0;
+  transition: all 400ms ease-in-out;
+  &.showCart {
+    display: block;
+    left: 0;
+    opacity: 1;
+  }
   .container {
-    max-width: 300px;
-    height: 400px;
-    i {
-      margin: 20px 0;
-      cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+    padding: 35px 0;
+    .navIcon {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 0 30px 0;
+      margin: 0;
+      i {
+        cursor: pointer;
+        color: #fff;
+      }
     }
     .cart {
       width: 100%;
@@ -49,8 +72,13 @@ const styles = css`
         color: #fff;
       }
     }
+    .cartWrapper {
+      height: 100%;
+      min-height: 1000px;
+      max-height: 1000px;
+      overflow: scroll;
+    }
   }
-}
 `;
 
 export default CartItems;

@@ -22,6 +22,7 @@ const styles = css`
   border-radius: 4px;
   box-shadow: -3px 7px 28px -14px rgba(0, 0, 0, 0.75);
   margin: 0 0 10px 0;
+  border: 1px solid red;
   .img {
     height: 200px;
     width: 200px;

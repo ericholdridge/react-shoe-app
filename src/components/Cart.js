@@ -4,11 +4,13 @@ import { useContext, useState } from "react";
 import { CartContext } from "./CartContext";
 
 const Cart = () => {
-  const [cart, setCart] = useContext(CartContext);
+  const {cart, setCart, showCart, setShowCart} = useContext(CartContext);
   const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
 
+  const toggleShowHide = () => setShowCart(!showCart)
+
   return (
-    <div css={styles} className="cart">
+    <div css={styles} className="cart" onClick={toggleShowHide}>
       <span>
         <i className="fas fa-shopping-cart"></i>
         {cart.length}
