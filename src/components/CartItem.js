@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 
-const CartItem = ({img, title, price, size}) => {
-  return(
+const CartItem = ({ img, title, price, size }) => {
+  return (
     <div className="cartItem" css={styles}>
       <div className="img">
-        <img src={img} alt=""/>
+        <img src={img} alt="" />
       </div>
       <div className="shoeInfo">
         <h3 className="shoeTitle">{title}</h3>
@@ -13,8 +13,8 @@ const CartItem = ({img, title, price, size}) => {
         <span>Size: {size}</span>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const styles = css`
   width: 100%;
@@ -22,7 +22,6 @@ const styles = css`
   border-radius: 4px;
   box-shadow: -3px 7px 28px -14px rgba(0, 0, 0, 0.75);
   margin: 0 0 10px 0;
-  border: 1px solid red;
   .img {
     height: 200px;
     width: 200px;
@@ -40,7 +39,6 @@ const styles = css`
     text-align: center;
     padding: 0 0 10px 0;
   }
-`
+`;
 
 export default CartItem;
-

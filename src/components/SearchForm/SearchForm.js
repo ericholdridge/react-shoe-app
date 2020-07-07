@@ -1,11 +1,33 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
-import Container from "../GlobalComponents/Container";
+import { useContext, useState, useEffect } from "react";
+import { CartContext } from "../CartContext";
 
 const SearchForm = () => {
+  const {
+    search,
+    setSearch,
+    database,
+    setDatabase,
+    searchResults,
+    setSearchResults,
+  } = useContext(CartContext);
+
+  useEffect(() => {
+    const results = database.filter((shoeTitle) => {
+      return shoeTitle.title.toLowerCase().includes(search.toLowerCase());
+    });
+    setSearchResults(results);
+  }, [search]);
+
   return (
     <form action="" css={styles}>
-      <input type="text" placeholder="Search Shoes" />
+      <input
+        type="text"
+        placeholder="Search Shoes"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
     </form>
   );
 };

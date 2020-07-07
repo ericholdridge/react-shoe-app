@@ -12,10 +12,6 @@ const CartItems = () => {
   return (
     <div className={showCart ? "showCart" : ""} css={styles}>
       <Container>
-        <div className="navIcon">
-          <i className="fas fa-bars fa-lg"></i>
-        </div>
-        {/* Display the items in the cart */}
         <Cart />
         <div className="cartWrapper">
           {cart.map((item) => (
@@ -39,6 +35,7 @@ const styles = css`
   background: #ccc;
   top: 0;
   left: -600px;
+  bottom: 0;
   background: #000;
   opacity: 0;
   transition: all 400ms ease-in-out;
