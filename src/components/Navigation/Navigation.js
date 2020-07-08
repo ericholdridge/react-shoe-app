@@ -30,6 +30,17 @@ const styles = css`
       font-weight: 600;
     }
   }
+  @media(max-width: 722px) {
+    .logo {
+      display: none;
+    }
+    form {
+      max-width: 300px;
+      input {
+        width:100%;
+      }
+    }
+  }
 `
 
 export default Navigation;

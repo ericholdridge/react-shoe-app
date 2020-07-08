@@ -76,6 +76,20 @@ const styles = css`
       overflow: scroll;
     }
   }
+  @media(max-width: 722px) {
+    width: 80%;
+    .container {
+      width: 94%;
+      .cart {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+      .cartItem {
+        max-width: 300px;
+        margin: 0 auto 14px auto;
+      }
+    }
+  }
 `;
 
 export default CartItems;

@@ -18,7 +18,7 @@ const Shoe = ({ image, title, price, size }) => {
   };
 
   return (
-    <div css={styles}>
+    <div css={styles} className="shoe">
       <div className="img">
         <img src={image} alt="" />
       </div>

@@ -30,6 +30,39 @@ const styles = css`
     justify-content: space-between;
     flex-wrap: wrap;
   }
+
+  @media(max-width: 695px) {
+    .container {
+      justify-content: center;
+      padding: 20px 0 0 0;
+    }
+  }
+
+  @media(min-width: 696px) and (max-width: 730px) {
+    .container {
+      padding: 20px 0 0 0;
+      .shoe {
+        max-width: 320px;
+      }
+    }
+  }
+
+  @media(min-width: 731px) and (max-width: 1057px) {
+    .container {
+      padding: 20px 0 0 0;
+      .shoe {
+        max-width: 47%;
+      }
+    }
+  }
+  @media(min-width: 1058px) and (max-width: 1224px) {
+    .container {
+      padding: 20px 0 0 0;
+      .shoe {
+        max-width: 31%;
+      }
+    }
+  }
 `;
 
 export default ShoeList;
